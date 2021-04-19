@@ -38,16 +38,10 @@ app.use(express.json());
 
 app.use(userRouter);
 app.use(userTask);
-
+app.get("/", (req, res) => {
+  res.send("If You see this Message Then your Backend It Fire !! ");
+});
 ////Listen to The Port
 app.listen(port, () => {
   console.log("Server Is Running in Port :" + port);
 });
-
-// const jwt = require("jsonwebtoken");
-// function Palyground() {
-//   const token = jwt.sign({ _id: "12345" }, "RndStr", { expiresIn: "1 days" });
-//   const data = jwt.verify(token, "RndStr");
-//   console.log(data);
-// }
-// Palyground();
